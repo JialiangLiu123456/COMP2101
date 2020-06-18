@@ -14,18 +14,30 @@
 #   You will need multiple tests to set a title
 #   Invent your own titles, do not use the ones from this example
 
+#Sir, my user name is a, my hostname is aaaa.
+
 ###############
 # Variables   #
 ###############
-title="Overlord"
-myname="dennis"
-hostname="myhostname"
+date=$(date +"%I:%M %p")
+the_time=$(date +%A)
+
+test $the_time = 'Monday' && title='Realist'
+test $the_time = 'Tuesday' && title='Pessiist'
+test $the_time = 'Wednesday' && title='Landlord'
+test $the_time = 'Thursday' && title='Tenant'
+test $the_time = 'Friday' && title='Agency'
+test $the_time = 'Saturday' && title='Lawyer'
+test $the_time = 'Sunday' && title='Optimist'
+
+
 
 ###############
 # Main        #
 ###############
 cat <<EOF
-
-Welcome to planet $hostname, "$title $myname!"
+It is $date
+$the_time
+Welcome to planet $(hostname), $title $USER!
 
 EOF
