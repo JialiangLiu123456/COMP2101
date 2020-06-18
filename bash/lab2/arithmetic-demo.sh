@@ -26,7 +26,7 @@ read -p "$prompt" firstnum secondnum thirdnum
 echo $firstnum $secondnum $thirdnum
 result_sum=$((firstnum + secondnum + thirdnum))
 result_product=$((firstnum * secondnum * thirdnum))
-cat <<EOF
+echo "
 	The sum of them is $result_sum
 	The product number is $result_product
-EOF
+"
