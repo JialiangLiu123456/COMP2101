@@ -6,7 +6,7 @@
 # Task 2: Change the output to only show:
 #    the sum of the 3 numbers with a label
 #    the product of the 3 numbers with a label
-
+: <<'END_COMMENT'
 firstnum=5
 secondnum=2
 sum=$((firstnum + secondnum))
@@ -17,4 +17,16 @@ cat <<EOF
 $firstnum plus $secondnum is $sum
 $firstnum divided by $secondnum is $dividend
   - More precisely, it is $fpdividend
+EOF
+END_COMMENT
+
+prompt="enter 3 nums: "
+echo ""
+read -p "$prompt" firstnum secondnum thirdnum
+echo $firstnum $secondnum $thirdnum
+result_sum=$((firstnum + secondnum + thirdnum))
+result_product=$((firstnum * secondnum * thirdnum))
+cat <<EOF
+	The sum of them is $result_sum
+	The product number is $result_product
 EOF
