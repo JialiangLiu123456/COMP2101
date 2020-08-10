@@ -1,0 +1,1 @@
+gwmi -class win32_product -filter "vendor!='Microsoft Corporation'" | sort-object InstallDate | format-table -autosize SoftwareName, Vendor, Version, InstallDate
